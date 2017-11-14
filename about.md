@@ -4,7 +4,7 @@ title: Hi there!!
 permalink: /about/
 ---
 
-My name here is AdalPari, a computer engineer who loves __Mobile World__ and development.
+My name here is _AdalPari_, a computer engineer who loves __Mobile World__ and development.
 
 Since I was a kid I've been always interested in technical areas: computers, electronics, robotics, [mecano](http://www.meccano.com/)..
 
