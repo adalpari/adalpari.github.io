@@ -1,10 +1,12 @@
 ---
 layout: post
-title: You're up and running!
+title: Let's clean the code!
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+One of the multiple _must_ that EVERY developer should do, is read: *Clean Code* book from _Robert C. Martin_.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+In that book, you will find basic and advanced rules and tips, to create good quality code in terms of readability. Easier to understand and mantain than a messy ugly code. These tips not only will make you a better developer but algo will save you great amount of time.
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+In order to have a "cheat sheet" about _Clean Code_ rules, I'm going to sumarize and write some key points. 
+
+If you are reading this without have readed the book, run to your closest library!
