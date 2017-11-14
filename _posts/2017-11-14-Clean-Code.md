@@ -31,6 +31,5 @@ If you are reading this without have readed the book, run to your closest librar
 - Avoid return ErrorCodes. Better use Exceptions
 - If use exceptions, try to call methods inside instead of operation code.
 - Arguments:
-..- Avoid to use >3 arguments. Arguments are hard to remember in calls, adds complexity, easier to introduce bugs, adds more test variants..
-..- Avoid use flags like booleans in arguments. It's very confusing. Better create to methods: one for true and another one for false.
-..- 
+- Avoid to use >3 arguments. Arguments are hard to remember in calls, adds complexity, easier to introduce bugs, adds more test variants..
+- Avoid use flags like booleans in arguments. It's very confusing. Better create to methods: one for true and another one for false.
