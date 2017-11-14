@@ -24,12 +24,12 @@ If you are reading this without have readed the book, run to your closest librar
 - If use blocks (_if, for.._) try to call methods inside instead of operation code. That's good for size and readaility.
 - Each method should do only ONE thing.
 - Do something or Answer something, not both.
-- Use only one level of abstraction per function. (E.g. If  method is managging a list, don't modify objects on it. Better call a new method for that)
+- Use only one level of abstraction per function. (E.g. If  method is managging a _list_, don't modify _objects_ on it. Better call a new method for that)
 - Try to write methods as a book writting. One method call another that it's immediately below. Avoid calls without any order in the code.
 - Avoid side effects. Do only what the method is suppoused to do.
 - Avoid output arguments. Don't use an argument to return information.
-- Avoid return ErrorCodes. Better use Exceptions
+- Avoid return _ErrorCodes_. Better use _Exceptions_
 - If use exceptions, try to call methods inside instead of operation code.
 - Arguments:
 - Avoid to use >3 arguments. Arguments are hard to remember in calls, adds complexity, easier to introduce bugs, adds more test variants..
-- Avoid use flags like booleans in arguments. It's very confusing. Better create to methods: one for true and another one for false.
+- Avoid use flags like _booleans_ in arguments. It's very confusing. Better create two methods: one for true and another one for false.
