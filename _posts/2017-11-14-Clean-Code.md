@@ -50,7 +50,7 @@ If you are reading this without have readed the book, run to your closest librar
 - Related concepts or operations should be close one from each other (_related methods, related operations.._)
 - Order your methods in the way that above methods call below methods (_Newspaper Metaphore_). And go from high to low level.
 - Lines should be __<120 characters__.
-- Surround operators with space except for diferenciate linked operations. _E.g: b*b - 4*a*c_
+- Surround operators with space except for diferenciate linked operations. _E.g: b\*b - 4\*a\*c_
 - Use indentation to better visualize blocks.
 - Avoid colapsing blocks with one line. Use new line, indentation and braces for each block.
 - When you need to break one line, break by operators and put them in new line. _E.g: && on ifs, + on string breaks.._
