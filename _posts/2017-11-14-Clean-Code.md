@@ -41,4 +41,16 @@ If you are reading this without have readed the book, run to your closest librar
 - By the time, comments can get outdted, because in revisions we tend to change the code but not the comments.
 - Comments tend to add noise in the code.
 - Do not comment code, better remove it. Other developers won't understand why it's commented and they directly wont read it.
-- Thumb rule is try to comment as less as posible
+- Try to __avoid comments__.
+
+## Formatting
+- Try to have small files. __<500 lines__.
+- Follow the __Newspaper Metaphore__. Your code should be readed from top to bottom. Avoid big jumps in the code structure.
+- Use blank lines to separate concepts, blocks and so on.
+- Related concepts or operations should be close one from each other (_related methods, related operations.._)
+- Order your methods in the way that above methods call below methods (_Newspaper Metaphore_). And go from high to low level.
+- Lines should be __<120 characters__.
+- Surround operators with space except for diferenciate linked operations. _E.g: b*b - 4*a*c_
+- Use indentation to better visualize blocks.
+- Avoid colapsing blocks with one line. Use new line, indentation and braces for each block.
+- When you need to break one line, break by operators and put them in new line. _E.g: && on ifs, + on string breaks.._
