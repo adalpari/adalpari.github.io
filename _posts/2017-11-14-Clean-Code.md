@@ -33,3 +33,12 @@ If you are reading this without have readed the book, run to your closest librar
 - Arguments:
 - Avoid to use >3 arguments. Arguments are hard to remember in calls, adds complexity, easier to introduce bugs, adds more test variants..
 - Avoid use flags like _booleans_ in arguments. It's very confusing. Better create two methods: one for true and another one for false.
+
+## Comments
+- A comment does not fix bad or not-understandable code.
+- Good code can be understandable itself. Avoid redundant comments.
+- If you use comments, explain _why_ not _how_.
+- By the time, comments can get outdted, because in revisions we tend to change the code but not the comments.
+- Comments tend to add noise in the code.
+- Do not comment code, better remove it. Other developers won't understand why it's commented and they directly wont read it.
+- Thumb rule is try to comment as less as posible
