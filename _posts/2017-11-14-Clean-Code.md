@@ -11,7 +11,7 @@ In order to have a "cheat sheet" about _Clean Code_ rules, I'm going to sumarize
 
 If you are reading this without have readed the book, run to your closest library!
 
-## Meaninful names
+## 2. Meaninful names
 - Reveal intention or use with the name.
 - Avoid use the encode type (_string, integer.._)
 - Avoid _m_\_ prefix. Use the colour code of your _IDE_.
@@ -19,7 +19,7 @@ If you are reading this without have readed the book, run to your closest librar
 - Classes: should be named with a noun or phrase.
 - Methods or functions: should be named with verb. The arguments should be nouns. That way a method will be _verb(noun)_
 
-## Functions
+## 3. Functions
 - Should be __small__. Perfect method is smaller than 5 lines. Yes 5 lines.
 - If use blocks (_if, for.._) try to call methods inside instead of operation code. That's good for size and readaility.
 - Each method should do only ONE thing.
@@ -34,7 +34,7 @@ If you are reading this without have readed the book, run to your closest librar
 - Avoid to use >3 arguments. Arguments are hard to remember in calls, adds complexity, easier to introduce bugs, adds more test variants..
 - Avoid use flags like _booleans_ in arguments. It's very confusing. Better create two methods: one for true and another one for false.
 
-## Comments
+## 4. Comments
 - A comment does not fix bad or not-understandable code.
 - Good code can be understandable itself. Avoid redundant comments.
 - If you use comments, explain _why_ not _how_.
@@ -43,7 +43,7 @@ If you are reading this without have readed the book, run to your closest librar
 - Do not comment code, better remove it. Other developers won't understand why it's commented and they directly wont read it.
 - Try to __avoid comments__.
 
-## Formatting
+## 5. Formatting
 - Try to have small files. __<500 lines__.
 - Follow the __Newspaper Metaphore__. Your code should be readed from top to bottom. Avoid big jumps in the code structure.
 - Use blank lines to separate concepts, blocks and so on.
