@@ -54,3 +54,11 @@ If you are reading this without have readed the book, run to your closest librar
 - Use indentation to better visualize blocks.
 - Avoid colapsing blocks with one line. Use new line, indentation and braces for each block.
 - When you need to break one line, break by operators and put them in new line. _E.g: && on ifs, + on string breaks.._
+
+## 6. Objects and Data Structures
+- Don't expose details of your objects. Try to be as muchs __abstract__ as possible. __Hide the data and expose methods__ to operate with it. _E.g. List, Map.._
+- Use polymorphism or procedural call depending on the context. 
+    - Polimorphysm: all objects contain it's own methods. If you add a new object, the other will be unaffected, but if you add a new method, all objects will be affetced.
+    - Procedural: Single method handles all object posibilities. If you add a new method, all objects will be unaffected, but if you add a new object, all methods will be affected.
+- _Law of Demeter_: use only methods and objects you directly know. Avoid to interact with classes or methods out of the scope. _Talk with friends, not with strangers_.
+- Use _DataTrasfer_ objects to handle all the data related with an object. The object will only have, private fields, constructor and getters/setters.
