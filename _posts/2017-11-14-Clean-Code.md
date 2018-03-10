@@ -62,3 +62,14 @@ If you are reading this without have readed the book, run to your closest librar
     - Procedural: Single method handles all object posibilities. If you add a new method, all objects will be unaffected, but if you add a new object, all methods will be affected.
 - _Law of Demeter_: use only methods and objects you directly know. Avoid to interact with classes or methods out of the scope. _Talk with friends, not with strangers_.
 - Use _DataTrasfer_ objects to handle all the data related with an object. The object will only have, private fields, constructor and getters/setters.
+
+## 7. Error Handling
+- Use _Exceptions_ instead of return error codes.
+- Use __Unchecked Exceptions__. Checked Exceptions add noise to the code and implies to add _throws_ declaration to every single method which calls the one with the exception but don't handle it.
+- Use informative names and group (wrap) similar exceptions into one. Use the message to add useful information.
+- Avoid add _normal flow_ code inside the catch blocks. These blocks should be used for only exception puroses.
+- __Don't return null__. Return null only adds posibilities of generates _Null Pointer Exceptions_. Or force the developer to add _null_ chechs. Intead of _null_, use empty collections, empty strings and so on.
+- __Don't pass null__. Pass null as an argument is even worse, because theorically, one don't know what the method is going to do with it.
+
+## 8. Boundaries
+- When use a third part library, try to write all access to it in single part of your code. Avoid call it everywhere, because it can cause dependency issues. You can use mappers, wrap the access with your own class, utils, and so on.
