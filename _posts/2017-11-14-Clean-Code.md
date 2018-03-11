@@ -73,3 +73,27 @@ If you are reading this without have readed the book, run to your closest librar
 
 ## 8. Boundaries
 - When use a third part library, try to write all access to it in single part of your code. Avoid call it everywhere, because it can cause dependency issues. You can use mappers, wrap the access with your own class, utils, and so on.
+
+## 9. Unit Tests
+- Use TDD. (Test Development Driven)
+- Apply to test code the same clean rules you apply to production code.
+- Focus on readability. It's really important to understand a test with a single fast read.
+- Use __Given, When, Then__ blocks (_Build-Operate-Check_).
+    - Given: set the conditions for the test.
+    - When: make the actions necessary to run the test.
+    - Then: check that everything works as expected (_assert_)
+- Try to use only one assert per test. If you write more than one assert, probably your test class is testing two different things and can be splitted in two.
+- Only one concept per test. Related with last point, each test should only test one single feature at a time.
+- Follow __F.I.R.S.T.__
+    - Fast: tests should be fast
+    - Independent: tests should not depend on each other.
+    - Repeatable: tests should be repeatable in any environment.
+    - Self-Validating: tests should have a boolean output.
+    
+## 10. Classes
+- Follow Java convention when write a class. _I.e. public static variables, private static variables, private instances, public methods (private methods will be writt follow the newspaper rule)_
+- Use a name which describe the class intent.
+- Encapsulate the class data as private variables when possible.
+- Keep it small.
+- Follow the __Single Responsability Principle__. Each class should be written to handle only one concept.
+- Cohesion is a grade of how methods are using the class variables. When there are several methods that are not using the variables, probably they can be extracted into another class.
