@@ -97,3 +97,14 @@ If you are reading this without have readed the book, run to your closest librar
 - Keep it small.
 - Follow the __Single Responsability Principle__. Each class should be written to handle only one concept.
 - Cohesion is a grade of how methods are using the class variables. When there are several methods that are not using the variables, probably they can be extracted into another class.
+
+## 11. Systems
+- As a city, a software system starts from a small one and grows up by the time. That's why is really important separate concepts inside it.
+- Clearly separate the construction of object from the use of it. Best approach is _Dependency Injection_.
+- Create modules for group the features and not mix them.
+
+## 12. Emergence
+- A well designed software probably follows _Kent Beck's_ rules:
+    - Runs all the tests: passing all the test of a testable software, means it is working as expected. _Also helps with refactoring_
+    - No duplication: duplications means additional works, higher bugs risk and unnecesary complexity.
+    - Expresive: the coude should express itself the intent of the developer who program it.
