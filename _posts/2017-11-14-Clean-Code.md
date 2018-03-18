@@ -91,7 +91,7 @@ If you are reading this without have readed the book, run to your closest librar
     - Self-Validating: tests should have a boolean output.
     
 ## 10. Classes
-- Follow Java convention when write a class. _I.e. public static variables, private static variables, private instances, public methods (private methods will be writt follow the newspaper rule)_
+- Follow Java convention when write a class. _I.e. public/private static constants, private static variables, private instance variables, public methods (private methods will be writt follow the newspaper rule)_
 - Use a name which describe the class intent.
 - Encapsulate the class data as private variables when possible.
 - Keep it small.
