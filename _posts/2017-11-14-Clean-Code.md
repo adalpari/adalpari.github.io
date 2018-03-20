@@ -115,3 +115,9 @@ If you are reading this without have readed the book, run to your closest librar
 - Minimise thenumber or shared resources. It will help with complexity and bugs.
 - Test the reliability of the coe without concurrency first.
 - Do not ignore non-reproducible bugs (race conditions). They could appear at any moment.
+
+## 14. 15. 16.
+- Refactoring step by step of some complete modules and programs.
+
+## 17. Smells and Heuristics
+- Concrete examples of code smells and some ways to refactor them. This chapter talks about some concrete practises writeng along the book.
