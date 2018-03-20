@@ -108,3 +108,10 @@ If you are reading this without have readed the book, run to your closest librar
     - Runs all the tests: passing all the test of a testable software, means it is working as expected. _Also helps with refactoring_
     - No duplication: duplications means additional works, higher bugs risk and unnecesary complexity.
     - Expresive: the coude should express itself the intent of the developer who program it.
+
+## 13. Concurrency
+- Separate the code in charge of concurrency from application code.
+- Protect shared resources with _synchronized_ blocks.
+- Minimise thenumber or shared resources. It will help with complexity and bugs.
+- Test the reliability of the coe without concurrency first.
+- Do not ignore non-reproducible bugs (race conditions). They could appear at any moment.
