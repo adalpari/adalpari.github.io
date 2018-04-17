@@ -2,9 +2,6 @@
 # This file contains configuration flags to customize your site
 #
 
-# Build Settings
-theme: jekyll-theme-modernist
-
 # Name of your site (displayed in the header)
 name: AdalPari
 
