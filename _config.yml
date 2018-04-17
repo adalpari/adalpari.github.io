@@ -2,6 +2,9 @@
 # This file contains configuration flags to customize your site
 #
 
+# Build Settings
+theme: minima
+
 # Name of your site (displayed in the header)
 name: AdalPari
 
