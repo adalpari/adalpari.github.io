@@ -3,7 +3,7 @@
 #
 
 # Build Settings
-theme: minima
+theme: jekyll-theme-dinky
 
 # Name of your site (displayed in the header)
 name: AdalPari
