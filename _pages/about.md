@@ -1,7 +1,7 @@
 ---
-layout: page
 title: Hi there!!
 permalink: /about/
+image: /assets/images/desk.jpg
 ---
 
 My name here is _AdalPari_, a computer engineer who loves __Mobile World__ and development.

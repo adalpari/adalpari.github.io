@@ -12,17 +12,17 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    :  "air" #, "default", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "AdalPari"
+title                    : "Adalpari"
 title_separator          : "-"
 name                     : "AdalPari"
-description              : "Pasionate developer on Android World."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : "Personal page"
+url                      : "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "adalpari/adalpari.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -58,7 +58,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia
 algolia:
@@ -97,9 +97,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "AdalPari"
-  avatar           : "https://raw.githubusercontent.com/adalpari/adalpari.github.io/master/images/avatar.jpg"
-  bio              : "I create things that help pleople do things"
+  name             : "Adalpari"
+  avatar           : "assets/images/avatar.jpg"
+  bio              : "Pasionate developer on Android World."
   location         : 
   email            :
   uri              :
@@ -122,7 +122,7 @@ author:
   stackoverflow    : "1820599/adalpari"
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          : "adalpar"
+  twitter          : "adalpari"
   vine             :
   weibo            :
   xing             :
@@ -266,3 +266,14 @@ defaults:
       comments: # true
       share: true
       related: true
+      classes: wide
+
+
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+

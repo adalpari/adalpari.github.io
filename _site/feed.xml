@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-30T13:55:35+02:00</updated><id>http://localhost:4000/</id><title type="html">Adalpari</title><subtitle>Personal page</subtitle><author><name>Adalpari</name></author><entry><title type="html">Let’s clean the code!</title><link href="http://localhost:4000/Clean-Code/" rel="alternate" type="text/html" title="Let's clean the code!" /><published>2017-11-14T00:00:00+01:00</published><updated>2017-11-14T00:00:00+01:00</updated><id>http://localhost:4000/Clean-Code</id><content type="html" xml:base="http://localhost:4000/Clean-Code/">&lt;p&gt;One of the multiple &lt;em&gt;must&lt;/em&gt; that EVERY developer should do, is read: &lt;strong&gt;Clean Code&lt;/strong&gt; book from &lt;em&gt;Robert C. Martin&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In that book, you will find basic and advanced rules and tips, to create good quality code in terms of readability. Easier to understand and mantain than a messy ugly code. These tips not only will make you a better developer but algo will save you great amount of time.&lt;/p&gt;
+
+&lt;p&gt;In order to have a “cheat sheet” about &lt;em&gt;Clean Code&lt;/em&gt; rules, I’m going to sumarize and write some key points.&lt;/p&gt;
+
+&lt;p&gt;If you are reading this without have readed the book, run to your closest library!&lt;/p&gt;
+
+&lt;h2 id=&quot;2-meaninful-names&quot;&gt;2. Meaninful names&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reveal intention or use with the name.&lt;/li&gt;
+  &lt;li&gt;Avoid use the encode type (&lt;em&gt;string, integer..&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;Avoid &lt;em&gt;m&lt;/em&gt;_ prefix. Use the colour code of your &lt;em&gt;IDE&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Use one single word per concept. Don’t use &lt;em&gt;remove&lt;/em&gt; and &lt;em&gt;delete&lt;/em&gt;, &lt;em&gt;fetch&lt;/em&gt; and &lt;em&gt;retrieve&lt;/em&gt;, and so on.&lt;/li&gt;
+  &lt;li&gt;Classes: should be named with a noun or phrase.&lt;/li&gt;
+  &lt;li&gt;Methods or functions: should be named with verb. The arguments should be nouns. That way a method will be &lt;em&gt;verb(noun)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-functions&quot;&gt;3. Functions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Should be &lt;strong&gt;small&lt;/strong&gt;. Perfect method is smaller than 5 lines. Yes 5 lines.&lt;/li&gt;
+  &lt;li&gt;If use blocks (&lt;em&gt;if, for..&lt;/em&gt;) try to call methods inside instead of operation code. That’s good for size and readaility.&lt;/li&gt;
+  &lt;li&gt;Each method should do only ONE thing.&lt;/li&gt;
+  &lt;li&gt;Do something or Answer something, not both.&lt;/li&gt;
+  &lt;li&gt;Use only one level of abstraction per function. (E.g. If  method is managging a &lt;em&gt;list&lt;/em&gt;, don’t modify &lt;em&gt;objects&lt;/em&gt; on it. Better call a new method for that)&lt;/li&gt;
+  &lt;li&gt;Try to write methods as a book writting. One method call another that it’s immediately below. Avoid calls without any order in the code.&lt;/li&gt;
+  &lt;li&gt;Avoid side effects. Do only what the method is suppoused to do.&lt;/li&gt;
+  &lt;li&gt;Avoid output arguments. Don’t use an argument to return information.&lt;/li&gt;
+  &lt;li&gt;Avoid return &lt;em&gt;ErrorCodes&lt;/em&gt;. Better use &lt;em&gt;Exceptions&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;If use exceptions, try to call methods inside instead of operation code.&lt;/li&gt;
+  &lt;li&gt;Arguments:&lt;/li&gt;
+  &lt;li&gt;Avoid to use &amp;gt;3 arguments. Arguments are hard to remember in calls, adds complexity, easier to introduce bugs, adds more test variants..&lt;/li&gt;
+  &lt;li&gt;Avoid use flags like &lt;em&gt;booleans&lt;/em&gt; in arguments. It’s very confusing. Better create two methods: one for true and another one for false.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-comments&quot;&gt;4. Comments&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;A comment does not fix bad or not-understandable code.&lt;/li&gt;
+  &lt;li&gt;Good code can be understandable itself. Avoid redundant comments.&lt;/li&gt;
+  &lt;li&gt;If you use comments, explain &lt;em&gt;why&lt;/em&gt; not &lt;em&gt;how&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;By the time, comments can get outdted, because in revisions we tend to change the code but not the comments.&lt;/li&gt;
+  &lt;li&gt;Comments tend to add noise in the code.&lt;/li&gt;
+  &lt;li&gt;Do not comment code, better remove it. Other developers won’t understand why it’s commented and they directly wont read it.&lt;/li&gt;
+  &lt;li&gt;Try to &lt;strong&gt;avoid comments&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-formatting&quot;&gt;5. Formatting&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Try to have small files. &lt;strong&gt;&amp;lt;500 lines&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Follow the &lt;strong&gt;Newspaper Metaphore&lt;/strong&gt;. Your code should be readed from top to bottom. Avoid big jumps in the code structure.&lt;/li&gt;
+  &lt;li&gt;Use blank lines to separate concepts, blocks and so on.&lt;/li&gt;
+  &lt;li&gt;Related concepts or operations should be close one from each other (&lt;em&gt;related methods, related operations..&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;Order your methods in the way that above methods call below methods (&lt;em&gt;Newspaper Metaphore&lt;/em&gt;). And go from high to low level.&lt;/li&gt;
+  &lt;li&gt;Lines should be &lt;strong&gt;&amp;lt;120 characters&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Surround operators with space except for diferenciate linked operations. &lt;em&gt;E.g: b*b - 4*a*c&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Use indentation to better visualize blocks.&lt;/li&gt;
+  &lt;li&gt;Avoid colapsing blocks with one line. Use new line, indentation and braces for each block.&lt;/li&gt;
+  &lt;li&gt;When you need to break one line, break by operators and put them in new line. &lt;em&gt;E.g: &amp;amp;&amp;amp; on ifs, + on string breaks..&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-objects-and-data-structures&quot;&gt;6. Objects and Data Structures&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Don’t expose details of your objects. Try to be as muchs &lt;strong&gt;abstract&lt;/strong&gt; as possible. &lt;strong&gt;Hide the data and expose methods&lt;/strong&gt; to operate with it. &lt;em&gt;E.g. List, Map..&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Use polymorphism or procedural call depending on the context.
+    &lt;ul&gt;
+      &lt;li&gt;Polimorphysm: all objects contain it’s own methods. If you add a new object, the other will be unaffected, but if you add a new method, all objects will be affetced.&lt;/li&gt;
+      &lt;li&gt;Procedural: Single method handles all object posibilities. If you add a new method, all objects will be unaffected, but if you add a new object, all methods will be affected.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Law of Demeter&lt;/em&gt;: use only methods and objects you directly know. Avoid to interact with classes or methods out of the scope. &lt;em&gt;Talk with friends, not with strangers&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Use &lt;em&gt;DataTrasfer&lt;/em&gt; objects to handle all the data related with an object. The object will only have, private fields, constructor and getters/setters.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-error-handling&quot;&gt;7. Error Handling&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use &lt;em&gt;Exceptions&lt;/em&gt; instead of return error codes.&lt;/li&gt;
+  &lt;li&gt;Use &lt;strong&gt;Unchecked Exceptions&lt;/strong&gt;. Checked Exceptions add noise to the code and implies to add &lt;em&gt;throws&lt;/em&gt; declaration to every single method which calls the one with the exception but don’t handle it.&lt;/li&gt;
+  &lt;li&gt;Use informative names and group (wrap) similar exceptions into one. Use the message to add useful information.&lt;/li&gt;
+  &lt;li&gt;Avoid add &lt;em&gt;normal flow&lt;/em&gt; code inside the catch blocks. These blocks should be used for only exception puroses.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Don’t return null&lt;/strong&gt;. Return null only adds posibilities of generates &lt;em&gt;Null Pointer Exceptions&lt;/em&gt;. Or force the developer to add &lt;em&gt;null&lt;/em&gt; chechs. Intead of &lt;em&gt;null&lt;/em&gt;, use empty collections, empty strings and so on.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Don’t pass null&lt;/strong&gt;. Pass null as an argument is even worse, because theorically, one don’t know what the method is going to do with it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-boundaries&quot;&gt;8. Boundaries&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;When use a third part library, try to write all access to it in single part of your code. Avoid call it everywhere, because it can cause dependency issues. You can use mappers, wrap the access with your own class, utils, and so on.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;9-unit-tests&quot;&gt;9. Unit Tests&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use TDD. (Test Development Driven)&lt;/li&gt;
+  &lt;li&gt;Apply to test code the same clean rules you apply to production code.&lt;/li&gt;
+  &lt;li&gt;Focus on readability. It’s really important to understand a test with a single fast read.&lt;/li&gt;
+  &lt;li&gt;Use &lt;strong&gt;Given, When, Then&lt;/strong&gt; blocks (&lt;em&gt;Build-Operate-Check&lt;/em&gt;).
+    &lt;ul&gt;
+      &lt;li&gt;Given: set the conditions for the test.&lt;/li&gt;
+      &lt;li&gt;When: make the actions necessary to run the test.&lt;/li&gt;
+      &lt;li&gt;Then: check that everything works as expected (&lt;em&gt;assert&lt;/em&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Try to use only one assert per test. If you write more than one assert, probably your test class is testing two different things and can be splitted in two.&lt;/li&gt;
+  &lt;li&gt;Only one concept per test. Related with last point, each test should only test one single feature at a time.&lt;/li&gt;
+  &lt;li&gt;Follow &lt;strong&gt;F.I.R.S.T.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Fast: tests should be fast&lt;/li&gt;
+      &lt;li&gt;Independent: tests should not depend on each other.&lt;/li&gt;
+      &lt;li&gt;Repeatable: tests should be repeatable in any environment.&lt;/li&gt;
+      &lt;li&gt;Self-Validating: tests should have a boolean output.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;10-classes&quot;&gt;10. Classes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Follow Java convention when write a class. &lt;em&gt;I.e. public/private static constants, private static variables, private instance variables, public methods (private methods will be writt follow the newspaper rule)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Use a name which describe the class intent.&lt;/li&gt;
+  &lt;li&gt;Encapsulate the class data as private variables when possible.&lt;/li&gt;
+  &lt;li&gt;Keep it small.&lt;/li&gt;
+  &lt;li&gt;Follow the &lt;strong&gt;Single Responsability Principle&lt;/strong&gt;. Each class should be written to handle only one concept.&lt;/li&gt;
+  &lt;li&gt;Cohesion is a grade of how methods are using the class variables. When there are several methods that are not using the variables, probably they can be extracted into another class.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;11-systems&quot;&gt;11. Systems&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;As a city, a software system starts from a small one and grows up by the time. That’s why is really important separate concepts inside it.&lt;/li&gt;
+  &lt;li&gt;Clearly separate the construction of object from the use of it. Best approach is &lt;em&gt;Dependency Injection&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Create modules for group the features and not mix them.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;12-emergence&quot;&gt;12. Emergence&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;A well designed software probably follows &lt;em&gt;Kent Beck’s&lt;/em&gt; rules:
+    &lt;ul&gt;
+      &lt;li&gt;Runs all the tests: passing all the test of a testable software, means it is working as expected. &lt;em&gt;Also helps with refactoring&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;No duplication: duplications means additional works, higher bugs risk and unnecesary complexity.&lt;/li&gt;
+      &lt;li&gt;Expresive: the coude should express itself the intent of the developer who program it.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;13-concurrency&quot;&gt;13. Concurrency&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Separate the code in charge of concurrency from application code.&lt;/li&gt;
+  &lt;li&gt;Protect shared resources with &lt;em&gt;synchronized&lt;/em&gt; blocks.&lt;/li&gt;
+  &lt;li&gt;Minimise thenumber or shared resources. It will help with complexity and bugs.&lt;/li&gt;
+  &lt;li&gt;Test the reliability of the coe without concurrency first.&lt;/li&gt;
+  &lt;li&gt;Do not ignore non-reproducible bugs (race conditions). They could appear at any moment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;14-15-16&quot;&gt;14. 15. 16.&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Refactoring step by step of some complete modules and programs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;17-smells-and-heuristics&quot;&gt;17. Smells and Heuristics&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Concrete examples of code smells and some ways to refactor them. This chapter talks about some concrete practises writeng along the book.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Adalpari</name></author><summary type="html">One of the multiple must that EVERY developer should do, is read: Clean Code book from Robert C. Martin.</summary></entry></feed>

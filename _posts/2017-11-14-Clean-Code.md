@@ -1,6 +1,8 @@
 ---
-layout: post
-title: Let's clean the code!
+title: "Let's clean the code!"
+header:
+  teaser: /assets/images/code_snap.jpg
+  overlay_image: /assets/images/code_snap.jpg
 ---
 
 One of the multiple _must_ that EVERY developer should do, is read: __Clean Code__ book from _Robert C. Martin_.
