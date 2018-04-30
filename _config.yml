@@ -18,9 +18,9 @@ minimal_mistakes_skin    :  "air" #, "default", "aqua", "contrast", "dark", "dir
 locale                   : "en-US"
 title                    : "Adalpari"
 title_separator          : "-"
-name                     : "AdalPari"
+name                     : "Adalpari"
 description              : "Personal page"
-url                      : "https://mmistakes.github.io"
+url                      : "https://adalpari.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "adalpari/adalpari.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -99,7 +99,7 @@ analytics:
 author:
   name             : "Adalpari"
   avatar           : "assets/images/avatar.jpg"
-  bio              : "Pasionate developer on Android World."
+  bio              : "Pasionate developer on Android World. I develop experiences for the people to enjoy them."
   location         : 
   email            :
   uri              :
@@ -267,13 +267,4 @@ defaults:
       share: true
       related: true
       classes: wide
-
-
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
 
