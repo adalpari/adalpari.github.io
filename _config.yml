@@ -16,10 +16,10 @@ minimal_mistakes_skin    :  "air" #, "default", "aqua", "contrast", "dark", "dir
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Adalpari"
+title                    : "Adalberto Plaza"
 title_separator          : "-"
-name                     : "Adalpari"
-description              : "Personal page"
+name                     : "Adalberto Plaza"
+description              : "Adalberto's developing webpage"
 url                      : "https://adalpari.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "adalpari/adalpari.github.io"
@@ -97,7 +97,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Adalpari"
+  name             : "Adalberto Plaza"
   avatar           : "assets/images/avatar.jpg"
   bio              : "Pasionate developer on Android World. I develop experiences for the people to enjoy them."
   location         : 
@@ -116,7 +116,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "adalbertoplaza"
   pinterest        :
   soundcloud       :
   stackoverflow    : "1820599/adalpari"
