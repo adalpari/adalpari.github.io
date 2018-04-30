@@ -268,3 +268,11 @@ defaults:
       related: true
       classes: wide
 
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
