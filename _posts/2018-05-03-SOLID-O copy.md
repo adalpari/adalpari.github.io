@@ -9,7 +9,7 @@ SOLID is an acronym that groups five basic principles every object oriented prog
 
 1. [Single responsibility principle.](../2018-04-30-SOLID-S.md)
 2. [Open/closed principle.](../2018-05-03-SOLID-O.md)
-3. Liskov substitution principle.
+3. [Liskov substitution principle](../2018-05-04-SOLID-L.md).
 4. Interface segregation principle.
 5. Dependency inversion principle
 
@@ -49,7 +49,7 @@ public class Shape {
 ```
 ```java
 public class ShapeDrawer {
-	public void draw(Shape shape) {
+	public void drawShape(Shape shape) {
 	    switch (shape.getType()) {
 	        case SQUARE:
 	            // draw a square
@@ -74,6 +74,7 @@ public abstract class Shape {
 
 ```java
 public class Square extends Shape {
+	@Override
 	public void draw() {
 		// draw a square
 	}
@@ -82,6 +83,7 @@ public class Square extends Shape {
 
 ```java
 public class Triangle extends Shape {
+	@Override
 	public void draw() {
 		// draw a triangle
 	}
@@ -92,6 +94,7 @@ You can see now how _Shape_ class is abstract and have a method which shuld be i
 
 ```java
 public class Circle extends Shape {
+	@Override
 	public void draw() {
 		// draw a circle
 	}
@@ -110,6 +113,7 @@ public interface DrawableShape {
 
 ```java
 public class Square implements DrawableShape {
+	@Override
 	public void draw() {
 		// draw a square
 	}
@@ -118,6 +122,7 @@ public class Square implements DrawableShape {
 
 ```java
 public class Triangle implements DrawableShape {
+	@Override
 	public void draw() {
 		// draw a triangle
 	}
@@ -126,7 +131,7 @@ public class Triangle implements DrawableShape {
 
 ```java
 public class ShapeDrawer {
-	public void draw(DrawableShape drawableShape) {
+	public void drawShape(DrawableShape drawableShape) {
 	    drawableShape.draw();
 	}
 }
