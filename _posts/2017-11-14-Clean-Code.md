@@ -91,6 +91,7 @@ If you are reading this without have read the book, run to your closest library!
     - Independent: tests should not depend on each other.
     - Repeatable: tests should be repeatable in any environment.
     - Self-Validating: tests should have a boolean output.
+    - Timely: tests should be written in the right phase: before write the production code.
     
 ## 10. Classes
 - Follow Java convention when write a class. _I.e. public/private static constants, private static variables, private instance variables, public methods (private methods will be written follow the newspaper rule)_
