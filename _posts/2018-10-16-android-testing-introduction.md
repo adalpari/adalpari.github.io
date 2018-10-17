@@ -45,3 +45,23 @@ These points are well represented in the following pyramid. Remember: lots of Un
 ![testing pyramid](/assets/images/testing-pyramid.png)
 
 This way we will cover almost all our code flow. Testing from the core logic to the user presentation of the app.
+
+
+## Tests in Android
+
+We need a test runner to be able to run the tests against our Android app. The default test runner is JUnit. We can use other runners, but JUnit should be enough to run our tests, so no change is needed. If you are not familiar with testing, we will see some basic interactions with the runner in the following posts.
+
+And last but not least, let's see how test are organised in Android. When we create an Android applications, along with some configuration files, a source folder is also created in _/appName/src/main/java/package_structure_. In addition to this, we can create two types of tests in two different folders (we will see how they are created automatically by the IDE):
+
+- _/appName/src/test/java/package_structure_: these test will run over java virtual machine. So, we will test here classes that use only pure Java code. We won't include here any test that contains Android code.
+- _/appName/src/androidTest/java/package_structure_: these tests need an Android emulator or physical device to run with. So, we will include here all tests containing any Android code (also non-UI Android tests that need objects like _Context, Android resources and so on_).
+
+Note: to follow good practise, tests should be included in the same package structure than its tested classes.
+
+In order to create a test automatically, put the cursor on the class name, push _alt + enter_ and select _Create test_
+
+![create test](/assets/images/create-test.png)
+
+You will see a wizard to create a test, asking you for the test name and some optional configurations. After that, you can choose where to create the test, inside _test_ or _androidTest_ folder.
+
+![test config](/assets/images/test-config.png)
