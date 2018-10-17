@@ -53,7 +53,7 @@ We need a test runner to be able to run the tests against our Android app. The d
 
 And last but not least, let's see how test are organised in Android. When we create an Android applications, along with some configuration files, a source folder is also created in _/appName/src/main/java/package_structure_. In addition to this, we can create two types of tests in two different folders (we will see how they are created automatically by the IDE):
 
-- _/appName/src/test/java/package_structure_: these test will run over java virtual machine. So, we will test here classes that use only pure Java code. We won't include here any test that contains Android code.
+- _/appName/src/test/java/package_structure_: these test will run over Java virtual machine. So, we will test here classes that use only pure Java (or Kotlin) code. We won't include here any test that contains Android code.
 - _/appName/src/androidTest/java/package_structure_: these tests need an Android emulator or physical device to run with. So, we will include here all tests containing any Android code (also non-UI Android tests that need objects like _Context, Android resources and so on_).
 
 Note: to follow good practise, tests should be included in the same package structure than its tested classes.
