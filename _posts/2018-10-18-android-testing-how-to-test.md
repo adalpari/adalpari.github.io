@@ -174,7 +174,7 @@ public class MyTest {
         when(phoneNumberDaoMocked.create(anyString())).thenReturn(true);   // set mock behaviour
 
         // When
-        boolean saved = MainActivity.savePhoneNumber(correctPhoneNumber, phoneNumberDaoMocked);
+        boolean saved = savePhoneNumber(correctPhoneNumber, phoneNumberDaoMocked);
 
         // Then
         assertTrue(saved);
