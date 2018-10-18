@@ -1,8 +1,8 @@
 ---
 title: "Android Testing - How to test"
 header:
-  teaser: /assets/images/.jpg
-  overlay_image: /assets/images/.jpg
+  teaser: /assets/images/basic-testing.jpg
+  overlay_image: /assets/images/basic-testing.jpg
 ---
 
 In this series of posts we are going to talk about Android Testing. It's a big field to talk about, bet here there are some important points and tips.
@@ -75,6 +75,7 @@ public void shouldDoXWhenY() {
 This and the following one (mocks) are some of the very basic topics in testing. It turned out that lot of coding strategies we do with our code, are highly related with testing. It's very important make our code testable rather than just test the code. Let's see an example of how important is dependency injection.
 
 ```java
+// Don't do this
 public boolean savePhoneNumber(String number) {
     boolean phoneCreated = false;
     
