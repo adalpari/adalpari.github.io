@@ -7,8 +7,8 @@ header:
 
 In this series of posts we are going to talk about Android Testing. It's a big field to talk about, bet here there are some important points and tips.
 
-1. [Android Testing - Introduction.](../android-testing-introduction/)
-1. [Android Testing - How to test.](../android-testing-how-to-test/)
+1. [Introduction.](../android-testing-introduction/)
+2. [How to test.](../android-testing-how-to-test/)
 
 ## Test structure
 
