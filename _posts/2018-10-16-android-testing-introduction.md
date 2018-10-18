@@ -22,13 +22,13 @@ In addition, when a new bug is found, we can fix it and make a new test to be su
 
 ## F.I.R.S.T. principles
 
-Acording to _Robert C. Martin_, tests should follow the _FIRST_ rule:
+Acording to [_Robert C. Martin_](../Clean-Code/), tests should follow the _FIRST_ rule:
 
-- Fast: tests should be fast when running. We want to run tests as much as possible on every iteration. If they don't run fast, it's going to be a bit painful.
-- Independent: tests should not depend on each other. This is, every test should be individual, they shouldn't expect results from other test or actions. This way we can run test individually or in random order. (In fact, in _Android Studio_ they are run in random order to assure this property)
-- Repeatable: tests should be repeatable in every run. If a test is repeatable means that we can trust it. If not, we won't be sure about its results.
-- Self-Validating: tests should have a boolean output. True if they pass or false if not. This way we can run multiple tests expecting all of them are true, instead of manually inspect the result of each one.
-- Thorough: They should cover all user cases. Having reliable tests means you are simulating all possible scenarios and you can be sure they are working.
+- __Fast__: tests should be fast when running. We want to run tests as much as possible on every iteration. If they don't run fast, it's going to be a bit painful.
+- __Independent__: tests should not depend on each other. This is, every test should be individual, they shouldn't expect results from other test or actions. This way we can run test individually or in random order. (In fact, in _Android Studio_ they are run in random order to assure this property)
+- __Repeatable__: tests should be repeatable in every run. If a test is repeatable means that we can trust it. If not, we won't be sure about its results.
+- __Self-Validating__: tests should have a boolean output. True if they pass or false if not. This way we can run multiple tests expecting all of them are true, instead of manually inspect the result of each one.
+- __Thorough__: They should cover all user cases. Having reliable tests means you are simulating all possible scenarios and you can be sure they are working.
 
 ## Tests clasification
 
@@ -36,9 +36,9 @@ There are multiple ways to classify tests depending on the level we want to achi
 
 However we are going to use one of the most used classification when we talk about Android testing: _Unit tests, integration tests and UI Tests_
 
-- Unit tests: are tests running single operations or methods. They are really fast, small and easy to run. We should create as much unit tests as we need to cover our core methods.
-- Integration tests: are test running different modules together. This means, we have to prepare the infrastructure to make them work. They are bigger and slower than the first ones, so we will have less test on this level.
-- UI tests: are test that interact directly with what the user see and can do. These test are the slowest ones and require to set up the environment. Because of this, we will have just a few UI tests.
+- __Unit tests__: are tests running single operations or methods. They are really fast, small and easy to run. We should create as much unit tests as we need to cover our core methods.
+- __Integration tests__: are test running different modules together. This means, we have to prepare the infrastructure to make them work. They are bigger and slower than the first ones, so we will have less test on this level.
+- __UI tests__: are test that interact directly with what the user see and can do. These test are the slowest ones and require to set up the environment. Because of this, we will have just a few UI tests.
 
 These points are well represented in the following pyramid. Remember: lots of Unit test, less integration tests and even less UI tests.
 
