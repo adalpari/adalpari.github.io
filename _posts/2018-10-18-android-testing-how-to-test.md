@@ -130,15 +130,13 @@ Now that we have our code organised pretty much, let's answer how to "control" t
 
 In order to get rid and control the external injection of the _PhoneNumberDao_, we are going to create a _fake_ object. Or, in other words, create a _mock_ or _test double_.
 
-It's really easy. We can create a new object extending from _PhoneNumberDao_, mocking all it's content. Or we can use [Mockito](https://site.mockito.org) to do it. Mockito is a testing framework to create _fake_ or mocked object and interact with them. 
+It's really easy. We can create a new object extending from _PhoneNumberDao_, mocking all it's content. Or we can use [Mockito](https://site.mockito.org) to do it. Mockito is a testing framework to create _fake_ or mocked objects and interact with them. 
 
-The definition for a basic mocked object, is a copy of the real object but not doing any operation; an empty object. In the case of the _MockedDao_ it won't save anything if we use `create(..)` method, and we won't know the returned result until we set it manually. So, if we use the mocked object in the test, calling `savePhoneNumber(number, phoneNumberDaoMocked)`, we have to set also the behaviour of the mocked object. 
+The definition for a basic mocked object, is a copy of the real object but without doing any operation; an empty object. In the case of the _MockedDao_ it won't save anything if we use `create(..)` method, and we won't know the returned result until we set it manually. So, if we use it in the test, calling `savePhoneNumber(number, phoneNumberDaoMocked)`, we have to set also the behaviour of the mocked object. 
 
-As we mentioned before, we can create the mock manually, and use it for the test. We will know the return of the _create()_ method, so we can create a simple test. 
+As we mentioned before, we can create the mock manually, and use it for the test. This way we will know the return of the _create()_ method, so we can create a simple test. 
 
 Just see how the test creates a mocked object, a correct number, try to save it and expect to be true. Because our mocked object is going to return true, the test is passing. 
-
-Remember that we are testing _savePhoneNumber()_ method, so it doesn't matter what the _dao_ is doing, we just want to be sure the saver method does what it's supposed to do. Notice that we can test the validation method as well, but we will see the complete example in the next post.
 
 ```java
 public class MyTest {
@@ -164,7 +162,10 @@ public class MyTest {
 }
 ```
 
-On the other hand, the same example but using _Mockito_ is a bit different. We need to create the mocked object first with the _Mockito_ method, and set its behaviour after creation. In this case, we specify that when the method `create(..)` is called with any string, it will return _true_. Note: we can create the object with this syntax or use the `@Mock` annotation if we set it as a class variable.
+Remember that we are testing _savePhoneNumber()_ method, so it doesn't matter what the _dao_ is doing, we just want to be sure the saver method does what it's supposed to do. Notice that we can test the validation method as well, but we will see the complete example in the next post.
+
+On the other hand, the same example but using _Mockito_ is a bit different. We need to create the mocked object first with the _Mockito_ method, and set its behaviour after creation. In this case, we specify that when the method `create(..)` is called with any string, it will return _true_. 
+Note: we can create the object with this syntax or use the `@Mock` annotation if we set it as a class variable.
 
 ```java
 @RunWith(MockitoJUnitRunner.class)
