@@ -5,7 +5,7 @@ header:
   overlay_image: /assets/images/basic-testing.jpg
 ---
 
-In this series of posts we are going to talk about Android Testing. It's a big field to talk about, bet here there are some important points and tips.
+In this series of posts we are going to talk about Android Testing. It's a big field to talk about, but here there are some important points and tips.
 
 1. [Introduction.](../android-testing-introduction/)
 2. [How to test.](../android-testing-how-to-test/)
@@ -40,20 +40,24 @@ public class MyTest {
 ```
 
 - _@Before setUp()_: this method is automatically __run before every test__. So, you can add here every common initialisation code you need: initialise variables, create objects and so on.
-- _@After tearDown()_: this the opposite to the previous one. It's automatically __run after every test__. So, you can add here every common code related to finish test cycle: reset states, remove items and so on.
-- _@Test testName_: this is the test itself. You can create as much test as you need. So, try to create one test per each atomic tasks. This way we will keep all tests as simple as possible. Try yo use a name which says what the test does or what it tests. Don't be shy about long names, it's a good way to quickly understand the test. There are multiple test names conventions. Personally I use something similar to `should[do/return/throw]Whatever[When/On]SomethingHappens()`. _E.g. `shouldReturnTrueWhenIntroduceRightUserLogin();`. We will see how a test is structured on the next point.
+- _@After tearDown()_: this is the opposite to the previous one. It's automatically __run after every test__. So, you can add here every common code related to finish test cycle: reset states, remove items and so on.
+- _@Test testName_: this is the test itself. You can create as much tests as you need. So, try to create one test per each atomic tasks. This way we will keep all tests as simple as possible. Try yo use a name which says what the test does or what it tests. Don't be shy about long names, it's a good way to quickly understand the test. There are multiple test names conventions. Personally I use something similar to:
+
+`should[do/return/throw]Whatever[When/On]SomethingHappens()`.
+
+_E.g. `shouldReturnTrueWhenIntroduceRightUserLogin();`. We will see how a test is structured on the next point.
 
 If I run the tests, this is the output I should get if everything is OK. All green.
 
 ![tests outout green](/assets/images/example-test-passing.png)
 
-However, if some test fails, I will see the red state of the failing test, what's happening (_It expected to get 1, but it got 2_) and the stack-trace is there was any crash. _(Notice that here the error is simulated, so don't pay attention to the actual reason)_
+However, if some test fails, I will see the red state of the failing test, what's happening (_It expected to get 1, but it got 2_) and the stack-trace if there was any crash. _(Notice that here the error is simulated, so don't pay attention to the actual reason)_
 
 ![tests output red](/assets/images/example-test-failing.png)
 
 ## Given-When-Then
 
-Well, let's talk about how every single test is organised inside. In order to keep a generic and organised structure, and again according to [_Robert C. Martin_](../Clean-Code/), we can use a three block structure. This will help us, in addition to descriptive title, to easily understand all the test from a project. Because all test will work in the same way.
+Well, let's talk about how every single test is organised inside it. In order to keep a generic and organised structure, and again according to [_Robert C. Martin_](../Clean-Code/), we can use a three block structure. This will help us, in addition to descriptive title, to easily understand all tests from a project. Because all tests will work in the same way.
 
 ```java
 @Test
@@ -66,13 +70,13 @@ public void shouldDoXWhenY() {
 }
 ```
 
-- __Given__: we will set the test conditions here and create necessary objects. Do not confuse this with _setUpMethod()_. This block will affect only to the current test, while the setUp method will affect to every test.
+- __Given__: we will set the test conditions here and create necessary objects. Do not confuse this with _setUpMethod()_. This block will affect only to the current test, while the _setUp_ method will affect to every test.
 - __When__: this block is used to run the actions to test. This is basically, call the methods we want to test and get the results from them.
-- __Then__: finally, we will use this block to check that the results from method executions are correct. In other words: the __asserts__. A useful tip is having only one assert per test. This way we will keep tests simple and will get direct test information about each atomic tests. If we mix functionalities while testing we can misunderstand results and some actions can modify the behaviour of other ones. Remember the _I_ from _FIRST_ principles: _Independent_.
+- __Then__: finally, we will use this block to check that the results from method executions are correct. In other words: the __asserts__. A useful tip is having only one assert per test. This way we will keep tests simple, and will get direct test information about each atomic tests. If we mix functionalities while testing, we can misunderstand results and some actions can modify the behaviour of other ones. Remember the _I_ from _FIRST_ principles: _Independent_.
 
 ## Dependency injection in tests
 
-This and the following one (mocks) are some of the very basic topics in testing. It turned out that lot of coding strategies we do with our code, are highly related with testing. It's very important make our code testable rather than just test the code. Let's see an example of how important is dependency injection.
+This and the following one (mocks) are some of the very basic topics in testing. It turned out that lot of coding strategies we do with our code base, are highly related with testing. It's very important make our code testable rather than just test the code. Let's see an example of how important is dependency injection.
 
 ```java
 // Don't do this
@@ -126,8 +130,7 @@ Now that we have our code organised pretty much, let's answer how to "control" t
 
 In order to get rid and control the external injection of the _PhoneNumberDao_, we are going to create a _fake_ object. Or, in other words, create a _mock_ or _test double_.
 
-It's really easy. We can create a new object extending from _PhoneNumberDao_, mocking all it's content. Or we can use [Mockito](https://site.mockito.org) to do it. 
-[Mockito](https://site.mockito.org) is a testing framework to create _fake_ or mocked object and interact with them. 
+It's really easy. We can create a new object extending from _PhoneNumberDao_, mocking all it's content. Or we can use [Mockito](https://site.mockito.org) to do it. Mockito is a testing framework to create _fake_ or mocked object and interact with them. 
 
 The definition for a basic mocked object, is a copy of the real object but not doing any operation; an empty object. In the case of the _MockedDao_ it won't save anything if we use `create(..)` method, and we won't know the returned result until we set it manually. So, if we use the mocked object in the test, calling `savePhoneNumber(number, phoneNumberDaoMocked)`, we have to set also the behaviour of the mocked object. 
 

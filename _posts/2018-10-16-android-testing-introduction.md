@@ -5,7 +5,7 @@ header:
   overlay_image: /assets/images/android-testing.jpg
 ---
 
-In this series of posts we are going to talk about Android Testing. It's a big field to talk about, bet here there are some important points and tips.
+In this series of posts we are going to talk about Android Testing. It's a big field to talk about, but here there are some important points and tips.
 
 1. [Introduction.](../android-testing-introduction/)
 2. [How to test.](../android-testing-how-to-test/)
