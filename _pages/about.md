@@ -5,7 +5,7 @@ header:
   overlay_image: /assets/images/desk.jpg
 ---
 
-My name here is _Adalberto Plaza_, a computer engineer who loves solution design, development and Mobile World.
+My name is _Adalberto Plaza_, a computer engineer who loves solution design, development and Mobile World.
 
 Since I was a kid I've been always interested in technical areas: computers, electronics, robotics, [mecano](http://www.meccano.com/)..
 
