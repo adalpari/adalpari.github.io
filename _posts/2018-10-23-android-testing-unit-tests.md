@@ -17,7 +17,7 @@ We are going to do some examples to easily understand how typical unit tests are
 
 The following class can be used to save a number in a persistent storage. It has a public method, which receive a number. If the number is valid, it's saved on the "database" using a _DAO_. The _dao_ can throw an exception, so it's thrown in the saver method as well. Note: we don't need a real `PhoneNumberDao` class, because we are testing the saver helper and not the _dao_. So, the database saving is just a supposition.
 
-´´´java
+```java
 public class NumberSaverHelper {
 
     private PhoneNumberDao phoneNumberDao;
@@ -44,9 +44,9 @@ public class NumberSaverHelper {
         return String.valueOf(number).length() == 9;
     }
 }
-´´´
+```
 
-´´´´java
+```java
 public class PhoneNumberDao {
 
     public boolean create(int number) throws PhoneNumberDaoException {
@@ -78,7 +78,7 @@ Test the use of `savePhoneNumber(int)`:
 
 Done? Let's see the solution!
 
-´´´java
+```java
 public class NumberSaverHelperTest {
 
     private final static int NEGATIVE_NUMBER = -123456789;
@@ -182,7 +182,7 @@ public class NumberSaverHelperTest {
         }
     }
 }
-´´´
+```
 
 Before the explanation, remember that you can (should) organise the test like they were a regular class. You can re-use methods, refactor the code and so on.
 
@@ -203,7 +203,7 @@ Now that we have seen a very basic unit test, let's do it something more related
 
 Let's say we have the _NumberHandler_ presenter and its view interface. The prsenter is used to be the communicator between the view and the _NumberSaverHelper_.
 
-´´´java
+```java
 public class NumberHandlerPresenter {
 
     private NumberHandlerView view;
@@ -238,14 +238,14 @@ public class NumberHandlerPresenter {
         }
     }
 }
-´´´
+```
 
-´´´java
+```java
 public interface NumberHandlerView {
     void showNumberSaved();
     void showNumberSavingError(String error);
 }
-´´´
+```
 
 Again, I invite you to try the following points by yourself before check the answers. Remember that we are going to test the presenter and not the _NumberSaverHelper_. We do not need any activity or fragment either for the view as long as we can mock it. _Tip: use test doubles to check the presenter callbacks_
 
@@ -260,7 +260,7 @@ Note: in this case, to show other variants, we are going to use [Mockito](https:
 
 Done? Let's go with the solution!
 
-´´´java
+```java
 @RunWith(MockitoJUnitRunner.class)
 public class NumberHandlerPresenterTest {
 
@@ -332,7 +332,7 @@ public class NumberHandlerPresenterTest {
         return Mockito.mock(NumberHandlerView.class);
     }
 }
-´´´
+```
 
 Again, we start (at the bottom of the class) setting up the _given_ methods. In this case we want to get different variants of the presenter depending on the mocked _PhoneSaverHelper_ inside it. One of them returns true when we try to save a number, the other one returns false, and the last one throws an exception. Notice here how we have set the behaviour of the mocked objects. In the previous example we did it manually, but here we are using _Mockito_ to do it. It's pretty simple and verbose syntax. _When_ a method is called with _anyInt_ argument, _then return_ a result (or _throw_ an exception).
 
