@@ -1,15 +1,15 @@
 ---
 title: "Android Testing - Unit tests"
 header:
-  teaser: /assets/images/.jpg
-  overlay_image: /assets/images/.jpg
+  teaser: /assets/images/unit-testing.jpg
+  overlay_image: /assets/images/unit-testing.jpg
 ---
 
 In this series of posts we are going to talk about Android Testing. It's a big field to talk about, but here there are some important points and tips.
 
 1. [Introduction.](../android-testing-introduction/)
 2. [How to test.](../android-testing-how-to-test/)
-2. [Unit tests.](../android-testing-unit-tests/)
+3. [Unit tests.](../android-testing-unit-tests/)
 
 We are going to do some examples to easily understand how typical unit tests are done in Android. So, in addition to read this post I encourage you to try the examples by yourself.
 

@@ -9,6 +9,7 @@ In this series of posts we are going to talk about Android Testing. It's a big f
 
 1. [Introduction.](../android-testing-introduction/)
 2. [How to test.](../android-testing-how-to-test/)
+3. [Unit tests.](../android-testing-unit-tests/)
 
 ## Test structure
 
