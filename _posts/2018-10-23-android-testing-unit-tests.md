@@ -346,6 +346,106 @@ Notice that, when the method of the view to show an error is called (´showNumbe
 
 Another option is create different method in the view depending on the error you want to show. This way the string resource will be retrieved in the view and you won't need to include Android references in the presenter. In this case, you can test the proper message is shown in the UI tests.
 
-### Bonus1: thread executors
+### Bonus1: testing background thread executors
+
+If you are familiar with Android programming, you probably know that thread handling in one of the daily basis in the environment. This is because we want to keep heavy tasks out of the _UI thread_. So probably, in addition to the presenter, you would have some background runner, executor or similar. Let's add a basic _thread executor_. The task we are running is actually a dummy task, so we will just add a small delay to simulate de delay in the background thread.
+
+```java
+public class BackgroundExecutor {
+
+    public void execute(Runnable runnable) {
+        // This is a simple thread creator to simulate background working
+        try {
+            Thread.sleep(100);
+            Thread runnerThread = new Thread(runnable);
+        } catch (InterruptedException e) { }
+    }
+}
+
+```
+
+Now, we can use it in `NumberHandlerPresenter`. Let's change the `onSaveNumber` method to run the task in the `BackgroundExecutor`. We are not redirecting the response to the UI thread (because it's not important now), but we will do on the UI part.
+
+```java
+public class NumberHandlerPresenter {
+
+    ...
+
+    private NumberSaverHelper numberSaverHelper;
+    private BackgroundExecutor backgroundExecutor;
+
+    public NumberHandlerPresenter(NumberSaverHelper numberSaverHelper, BackgroundExecutor backgroundExecutor) {
+        this.numberSaverHelper = numberSaverHelper;
+        this.backgroundExecutor = backgroundExecutor;
+    }
+
+    ...
+
+    public void onSaveNumber(final int number) {
+        if (view == null) {
+            return;
+        }
+
+        backgroundExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    boolean saved = numberSaverHelper.savePhoneNumber(number);
+                    if (saved) {
+                        view.showNumberSaved();
+                    } else {
+                        view.showNumberSavingError(THE_NUMBER_IS_NOT_VALID_MSG);
+                    }
+                } catch (PhoneNumberDao.PhoneNumberDaoException exception) {
+                    view.showNumberSavingError(ERROR_WHILE_SAVING_THE_NUMBER_MSG);
+                }
+            }
+        });
+    }
+}
+```
+
+Now, try to run the tests again. What happens? Are the test "in green"?
+
+Probably not, they fail since you introduced the background thread handling. This is happening because of a simple reason: test are being run in the main thread without waiting for any other thread to finish. As soon as the main thread finish to run the assigned code, the _test runner_ executes the _asserts_, but the results/callbacks are not finished yet. Although the test are correctly written they are failing because of the parallel execution of the thread. How can we fix this?
+
+There's an easy way. It's actually the same way we solve most of the test issues: mock the _BackgroundExecutor_. If we mock it, we can override the execute method and run the received task in the same thread instead of create a new one. This way, we will keep the thread handling in the app, but we will test it in a single thread. (This is applicable to executors, handler, async tasks and so on).
+
+This is how the mocked object looks inside the test class. And this is how we will create the presenter now we have the _BackgroundExecutor_ (mocked object in the test).
+
+```java
+@RunWith(MockitoJUnitRunner.class)
+public class NumberHandlerPresenterTest {
+
+    ...
+
+    private BackgroundExecutorMocked backgroundExecutorMocked = new BackgroundExecutorMocked();
+
+    ...
+
+    NumberHandlerPresenter givenWHATEVERTYPEWENEEDPresenter() throws PhoneNumberDao.PhoneNumberDaoException {
+        NumberSaverHelper numberSaverHelper = Mockito.mock(NumberSaverHelper.class);
+        when(numberSaverHelper.savePhoneNumber(anyInt())).thenReturn(true);
+        return new NumberHandlerPresenter(numberSaverHelper, backgroundExecutorMocked);
+    }
+
+    class BackgroundExecutorMocked extends BackgroundExecutor {
+        @Override
+        public void execute(Runnable runnable) {
+            runnable.run();
+        }
+    }
+}
+```
+
+Now, all the test should pass correctly.
 
 ### Bonus2: static helpers
+
+Static helpers are very common in some scenarios: we have the ability to access to some repetitive code or common methods without the necessity of instantiate them over and over again. But they are a big problem for testing. I mean, we can test them with no problem: we just need to call their methods and check the return. But what if we want to mock them? when if the _BackgroundExecutor_  was a static helper? We could not test our presenter just because of the static executor. Too bad..
+
+Best solution is avoid static classes and use _Dependency Injection_ (with a dependency injector like Dagger or similar). That way we will get the same helper everywhere, and we can mock it in the tests. However, this is not possible in some stablished projects which are already using the static helper. But a bit of refactor will be needed anyway.
+
+There are two alternative "solutions" (notice they are not the best ones) in order to make static helpers compatible with tests:
+1. Keep the test static and don't mock it. This is risky because we can not simulate the different helper responses inside a class which is using it. (This solution won't work for helpers which need to be mocked to make the test pass, like _BackgroundExecutor_).
+2. Make the test singleton with an injectable _Instance_ and _getInstance()_ method. In this case we need to change all calls to the helper to use the instance, and inject a mocked one in the tests. This will fix the problem with mocking the helper in tests and it's used 
