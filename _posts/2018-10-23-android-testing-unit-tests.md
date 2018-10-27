@@ -409,9 +409,9 @@ Now, try to run the tests again. What happens? Are the test "in green"?
 
 Probably not, they fail since you introduced the background thread handling. This is happening because of a simple reason: test are being run in the main thread without waiting for any other thread to finish. As soon as the main thread finish to run the assigned code, the _test runner_ executes the _asserts_, but the results/callbacks are not finished yet. Although the test are correctly written they are failing because of the parallel execution of the thread. How can we fix this?
 
-There's an easy way. It's actually the same way we solve most of the test issues: mock the _BackgroundExecutor_. If we mock it, we can override the execute method and run the received task in the same thread instead of create a new one. This way, we will keep the thread handling in the app, but we will test it in a single thread. (This is applicable to executors, handler, async tasks and so on).
+There's an easy way. It's actually the same way we solve most of the test issues: mock the _BackgroundExecutor_. If we mock it, we can override the execute method and run the received task in the same thread instead of create a new one. This way, we keep the thread handling in the app, but we test it in a single thread. (This is applicable to executors, handler, async tasks and so on).
 
-This is how the mocked object looks inside the test class. And this is how we will create the presenter now we have the _BackgroundExecutor_ (mocked object in the test).
+This is how the mocked object looks inside the test class. And this is how we create the presenter now we have the _BackgroundExecutor_ (mocked object in the test).
 
 ```java
 @RunWith(MockitoJUnitRunner.class)
@@ -442,10 +442,12 @@ Now, all the test should pass correctly.
 
 ### Bonus2: static helpers
 
-Static helpers are very common in some scenarios: we have the ability to access to some repetitive code or common methods without the necessity of instantiate them over and over again. But they are a big problem for testing. I mean, we can test them with no problem: we just need to call their methods and check the return. But what if we want to mock them? when if the _BackgroundExecutor_  was a static helper? We could not test our presenter just because of the static executor. Too bad..
+Static helpers are very common in some scenarios: we have the ability to access to some repetitive code or common methods without the necessity of instantiate them over and over again. But they are a big problem for testing. I mean, we can test them with no problem: we just need to call their methods and check they return succesfully. But what if we want to mock them? what if the _BackgroundExecutor_  was a static helper? We could not test our presenter just because of the static executor. Too bad..
 
-Best solution is avoid static classes and use _Dependency Injection_ (with a dependency injector like Dagger or similar). That way we will get the same helper everywhere, and we can mock it in the tests. However, this is not possible in some stablished projects which are already using the static helper. But a bit of refactor will be needed anyway.
+Best solution is avoid static classes and use _Dependency Injection_ (like we have done in the example with _BackgroundExecutor_). That way we will get the same helper everywhere, and we can mock it in the tests. However, this is not possible in some stablished projects which are already using the static helper (and we can not change them).
 
 There are two alternative "solutions" (notice they are not the best ones) in order to make static helpers compatible with tests:
-1. Keep the test static and don't mock it. This is risky because we can not simulate the different helper responses inside a class which is using it. (This solution won't work for helpers which need to be mocked to make the test pass, like _BackgroundExecutor_).
-2. Make the test singleton with an injectable _Instance_ and _getInstance()_ method. In this case we need to change all calls to the helper to use the instance, and inject a mocked one in the tests. This will fix the problem with mocking the helper in tests and it's used 
+1. Keep the helper static and don't mock it. This is risky because we can not simulate the different helper responses inside a class which is using it. (This solution won't work for helpers which need to be mocked to make the test pass, like _BackgroundExecutor_).
+2. Make the test singleton with an injectable _Instance_ and _getInstance()_ method. In this case we need to change all calls to the helper to use the instance, and inject a mocked one in the tests. This will fix the problem with mocking the helper in tests and its use.
+
+Note how important is adapt the base code to tests in order to be able to run them. In other words __make the code testable__.
