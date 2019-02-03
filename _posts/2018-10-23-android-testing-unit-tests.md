@@ -10,6 +10,7 @@ In this series of posts we are going to talk about Android Testing. It's a big f
 1. [Introduction.](../android-testing-introduction/)
 2. [How to test.](../android-testing-how-to-test/)
 3. [Unit tests.](../android-testing-unit-tests/)
+4. [Integration tests.](../android-testing-integration-tests/)
 
 We are going to do some examples to easily understand how typical unit tests are done in Android. So, in addition to read this post I encourage you to try the examples by yourself.
 
