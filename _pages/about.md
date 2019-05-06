@@ -2,7 +2,7 @@
 title: Hi there!!
 permalink: /about/
 header:
-  overlay_image: /assets/images/desk.jpg
+  overlay_image: /assets/images/about_image.jpg
 ---
 
 My name is _Adalberto Plaza_, a computer engineer who loves solution design, development and __mobile world__.
