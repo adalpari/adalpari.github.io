@@ -61,6 +61,7 @@ If you just create a test like we have been doing on the past post, probably you
 
 ![androidTest folder](/assets/images/androidTest.png)
 
+
 ```java
 public class SettingsHelperTest {
 
