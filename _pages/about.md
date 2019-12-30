@@ -11,7 +11,7 @@ Since I was a kid I've been always interested in technical areas: computers, ele
 
 By the time, I started focusing on computers, _0s_ and _1s_. And finally I got a __Degree__ and a __Master__ in __Computer Science__ at [Universidad Autónoma de Madrid](http://uam.es/UAM/Home.htm?language=en).
 
-Nowadays I work as __Android Product Tech Manager__ at [Degoo](https://play.google.com/store/apps/details?id=com.degoo.android) and I love it ♥.
+Nowadays I work as __Android Product Manager and Developer__ at [Degoo](https://play.google.com/store/apps/details?id=com.degoo.android) and I love it ♥.
 
 
 ### Contact me
